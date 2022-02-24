@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Header() {
     const [displaySearch, setDisplaySearch] = useState(false);
   return (
-    <header className="shadow-md sticky top-0 h-[85px] bg-white">
+    <header className="shadow-md sticky top-0 h-[85px] bg-white z-40">
       {
           displaySearch 
           ? <div className="flex items-center justify-between max-w-7xl mx-auto p-4">
@@ -34,7 +34,7 @@ export default function Header() {
               <Link href={"/login"}>
                 <p className="font-semibold text-red-400 cursor-pointer">Sign in</p>
               </Link>
-              <p className="font-semibold text-red-400 px-4 py-2 border border-red-400 rounded-full cursor-pointer hover:bg-red-400 hover:text-white transition duration-150 ease-out">Get Started</p>
+              <p className="font-semibold text-red-400 px-4 py-2 border-2 border-red-400 rounded-full cursor-pointer hover:bg-red-400 hover:text-white transition duration-150 ease-out">Get Started</p>
             </div>
           </div>
         </div>
