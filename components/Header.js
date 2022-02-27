@@ -28,7 +28,7 @@ export default function Header() {
           {/* BLOCK RIGHT */}
           <div className="flex items-center">
             <div onClick={() => {setDisplaySearch(true)}}>
-              <SearchIcon className="h-9 cursor-pointer p-2 hover:text-green-500 transition duration-150 ease-linear" />
+              <SearchIcon className="h-9 cursor-pointer p-2 hover:text-red-500 transition duration-150 ease-linear" />
             </div>
             <div className="flex items-center space-x-4 ml-4">
               <Link href={"/login"}>
