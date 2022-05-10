@@ -2,11 +2,13 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { SearchIcon, XIcon } from "@heroicons/react/solid";
 import Link from "next/link";
+import LoginForm from "./LoginForm";
 
 export default function Header() {
     const [displaySearch, setDisplaySearch] = useState(false);
+    const [displayLoginForm, setDisplayLoginForm] = useState(false);
   return (
-    <header className="shadow-md sticky top-0 h-[85px] bg-white z-40">
+    <header className="shadow-md sticky top-0 h-[85px] bg-white z-30">
       {
           displaySearch 
           ? <div className="flex items-center justify-between max-w-7xl mx-auto p-4">
@@ -31,15 +33,17 @@ export default function Header() {
               <SearchIcon className="h-9 cursor-pointer p-2 hover:text-red-500 transition duration-150 ease-linear" />
             </div>
             <div className="flex items-center space-x-4 ml-4">
-              <Link href={"/login"}>
-                <p className="font-semibold text-red-400 cursor-pointer">Sign in</p>
-              </Link>
+              <p onClick={() => {setDisplayLoginForm(true)}} className="font-semibold text-red-400 cursor-pointer">Sign in</p>
               <p className="font-semibold text-red-400 px-4 py-2 border-2 border-red-400 rounded-full cursor-pointer hover:bg-red-400 hover:text-white transition duration-150 ease-out">Get Started</p>
             </div>
           </div>
         </div>
       }
-      
+      {
+        displayLoginForm 
+        ? <LoginForm setDisplayLoginForm={setDisplayLoginForm} />
+        : ""
+      }
     </header>
   );
 }

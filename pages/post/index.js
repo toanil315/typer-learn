@@ -49,9 +49,11 @@ export default function Post() {
     }, [])
 
     const handleBodyScroll = () => {
-        const scrollableHeight = bodyRef.current.clientHeight - window.innerHeight;
-        const percentage = window.scrollY / scrollableHeight * 100;
-        setProgress(percentage.toFixed(0));
+        if(bodyRef.current) {
+            const scrollableHeight = bodyRef.current.clientHeight - window.innerHeight;
+            const percentage = window.scrollY / scrollableHeight * 100;
+            setProgress(percentage.toFixed(0));
+        }
     }
 
   return (
