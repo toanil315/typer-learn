@@ -32,8 +32,8 @@ const fakeData = [
       avatar: "https://typer.seventhqueen.com/publisher/wp-content/uploads/sites/2/front-user-profile/1571672984_mangusta.jpg",
     },
     category: {
-      id: 1,
-      categoryName: "WORLDWIDE",
+      id: 2,
+      categoryName: "TECHNOLOGY",
     },
     createdAt: "October 6, 2019",
   },
@@ -71,13 +71,13 @@ const fakeData = [
   },
 ]
 
-const renderPost = () => {
-  return fakeData.map((post, index) => {
-    return <SmallPost key={post?.id} post={post} />
-  })
-}
-
 export default function Home() {
+  const renderPost = () => {
+    return fakeData.map((post, index) => {
+      return <SmallPost key={post?.id} post={post} />
+    })
+  }
+  
   return (
     <div>
       <Head>
