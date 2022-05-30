@@ -71,13 +71,13 @@ const fakeData = [
   },
 ]
 
-export default function Home() {
+export default function Home({posts}) {
   const renderPost = () => {
-    return fakeData.map((post, index) => {
-      return <SmallPost key={post?.id} post={post} />
+    return posts.map((post, index) => {
+      return <SmallPost key={post?.postId} post={post} />
     })
   }
-  
+
   return (
     <div>
       <Head>
@@ -96,4 +96,17 @@ export default function Home() {
       <Footer />
     </div>
   )
+}
+
+export const getServerSideProps = async () => {
+  const result = await fetch("http://127.0.0.1:8000/posts")
+  const posts = await result.json()
+
+  console.log(posts)
+
+  return {
+    props: {
+      posts
+    }
+  }
 }

@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function SmallPost({ post }) {
   return (
-    <Link href={"/post"}>
+    <Link href={`/post/${post.postId}`}>
       <div className="p-4 bg-[#FDFDFC] border-2 border-fuchsia-50 rounded-lg shadow-lg shadow-rose-200">
         <div>
           {/* <div className='relative h-12 w-12 rounded-md'>
@@ -43,7 +43,7 @@ export default function SmallPost({ post }) {
                 <h4 className="text-sm font-bold text-gray-600 ">
                   Written by{" "}
                   <span className="group-hover:text-red-500 transition duration-150 ease-out ">
-                    {post?.author?.name}
+                    {post?.author?.userName}
                   </span>
                 </h4>
                 <span className="text-sm text-gray-500 font-semibold">{post?.createdAt}</span>
